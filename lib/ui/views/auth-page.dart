@@ -108,19 +108,21 @@ class _AuthPageState extends State<AuthPage> {
 
   Widget _showForm() {
     return Container(
-        padding: EdgeInsets.all(16.0),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              showLogo(),
-              showEmailInput(),
-              showPasswordInput(),
-              showPrimaryButton(),
-              showSecondaryButton(),
-              showErrorMessage(),
-            ],
+        padding: EdgeInsets.symmetric(horizontal: 16.0),
+        child: Center(
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                showLogo(),
+                showEmailInput(),
+                showPasswordInput(),
+                showPrimaryButton(),
+                showSecondaryButton(),
+                showErrorMessage(),
+              ],
+            ),
           ),
         ));
   }
@@ -146,7 +148,7 @@ class _AuthPageState extends State<AuthPage> {
     return Hero(
       tag: 'hero',
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
+        padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
         child: CircleAvatar(
           backgroundColor: Colors.transparent,
           radius: 48.0,

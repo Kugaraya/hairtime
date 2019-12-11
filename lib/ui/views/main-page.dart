@@ -24,7 +24,10 @@ class _DashboardMainState extends State<DashboardMain> {
           ),
         ),
         floatingActionButton: FloatingActionButton(
-            onPressed: () => widget.auth.signOut(),
+            onPressed: () {
+              widget.auth.signOut();
+              widget.logoutCallback();
+            },
             child: Icon(
               Icons.exit_to_app,
               color: Colors.white,
