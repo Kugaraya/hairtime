@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "712160939374",
+    "firebase_url": "https://fir-hairtime.firebaseio.com",
+    "project_id": "fir-hairtime",
+    "storage_bucket": "fir-hairtime.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:712160939374:android:aca7f792559e6a5b20057f",
+        "android_client_info": {
+          "package_name": "com.example.hairtime"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "712160939374-rnt8p2aqtr5uu9btqc9taa2d5rmjsre2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQVFE7ipSYdlnfdKMxNdg503lZuvOgomY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "712160939374-rnt8p2aqtr5uu9btqc9taa2d5rmjsre2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
