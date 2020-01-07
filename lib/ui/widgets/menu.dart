@@ -1,7 +1,8 @@
+import 'package:hairtime/core/services/auth-service.dart';
 import 'package:hairtime/ui/shared/menuclipper.dart';
 import 'package:flutter/material.dart';
 
-buildDrawer(BuildContext context) {
+buildDrawer(BaseAuth auth, BuildContext context) {
   final String _img = "assets/logo.png";
   return ClipPath(
     clipper: MenuClipper(),

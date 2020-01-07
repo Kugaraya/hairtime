@@ -55,10 +55,8 @@ class _LoginAnimateState extends State<LoginAnimate>
                         shape: CircleBorder(),
                         child: CircleAvatar(
                           backgroundColor: Colors.grey[100],
-                          child: Icon(
-                            Icons.person_pin,
-                            color: Theme.of(context).primaryColor,
-                            size: 70.0,
+                          child: Image.asset(
+                            "assets/logo.png",
                           ),
                           radius: 50.0,
                         )),
@@ -102,7 +100,7 @@ class _LoginAnimateState extends State<LoginAnimate>
                   delay: delayedAmount + 1600,
                 ),
                 SizedBox(
-                  height: 100.0,
+                  height: 200.0,
                 ),
                 DelayedAnimation(
                   child: GestureDetector(
@@ -133,10 +131,11 @@ class _LoginAnimateState extends State<LoginAnimate>
         ),
         child: FlatButton(
           splashColor: Colors.grey[50],
-          onPressed: () => Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => DashboardScreen(
-                    auth: Auth(),
-                  ))),
+          onPressed: () =>
+              Navigator.of(context).pushReplacement(MaterialPageRoute(
+                  builder: (context) => DashboardScreen(
+                        auth: Auth(),
+                      ))),
           child: Center(
             child: Text(
               'Get Started',

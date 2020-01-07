@@ -10,8 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'HairTime',
       theme: ThemeData(
-          primaryColor: Colors.greenAccent[800],
-          accentColor: Colors.blueGrey[900]),
+          primaryColor: Colors.blueGrey[900],
+          accentColor: Colors.blueGrey[600]),
       initialRoute: '/',
       onGenerateRoute: Router.generateRoute,
     );

@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:hairtime/core/services/auth-service.dart';
+import 'package:hairtime/ui/views/admin-view.dart';
+import 'package:hairtime/ui/views/user-view.dart';
 
 class DashboardMain extends StatefulWidget {
-  DashboardMain({Key key, this.auth, this.userId, this.logoutCallback})
+  DashboardMain(
+      {Key key, this.auth, this.userId, this.logoutCallback, this.userEmail})
       : super(key: key);
 
+  final String userEmail;
+  final String userId;
   final BaseAuth auth;
   final VoidCallback logoutCallback;
-  final String userId;
 
   @override
   _DashboardMainState createState() => _DashboardMainState();
@@ -17,25 +21,19 @@ class _DashboardMainState extends State<DashboardMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            onPressed: () {},
-          ),
-        ),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {
-              widget.auth.signOut();
-              widget.logoutCallback();
-            },
-            child: Icon(
-              Icons.exit_to_app,
-              color: Colors.white,
-            )),
-        body: Center(
-            child: Text(
-          "Hey, you've logged in successfully",
-          style: TextStyle(fontSize: 20.0),
-        )));
+      body: widget.userId.contains("Ul0qXlXt1RaiYjaAFeMLaeBdWU42")
+          ? AdminView(
+              userEmail: widget.userEmail,
+              userId: widget.userId,
+              auth: widget.auth,
+              logoutCallback: widget.logoutCallback,
+            )
+          : UserView(
+              userEmail: widget.userEmail,
+              userId: widget.userId,
+              auth: widget.auth,
+              logoutCallback: widget.logoutCallback,
+            ),
+    );
   }
 }

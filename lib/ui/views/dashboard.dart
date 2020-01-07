@@ -24,6 +24,7 @@ class _DashboardScreenState extends State<DashboardScreen>
     with AutomaticKeepAliveClientMixin<DashboardScreen> {
   AuthStatus authStatus = AuthStatus.NOT_DETERMINED;
   String _userId = "";
+  String _userEmail = "";
 
   @override
   bool get wantKeepAlive => true;
@@ -35,6 +36,7 @@ class _DashboardScreenState extends State<DashboardScreen>
       setState(() {
         if (user != null) {
           _userId = user?.uid;
+          _userEmail = user?.email;
         }
         authStatus =
             user?.uid == null ? AuthStatus.NOT_LOGGED_IN : AuthStatus.LOGGED_IN;
@@ -46,6 +48,7 @@ class _DashboardScreenState extends State<DashboardScreen>
     widget.auth.getCurrentUser().then((user) {
       setState(() {
         _userId = user.uid.toString();
+        _userEmail = user.email;
       });
     });
     setState(() {
@@ -57,6 +60,7 @@ class _DashboardScreenState extends State<DashboardScreen>
     setState(() {
       authStatus = AuthStatus.NOT_LOGGED_IN;
       _userId = "";
+      _userEmail = "";
     });
   }
 
@@ -85,9 +89,10 @@ class _DashboardScreenState extends State<DashboardScreen>
       case AuthStatus.LOGGED_IN:
         if (_userId.length > 0 && _userId != null) {
           return DashboardMain(
-            userId: _userId,
             auth: widget.auth,
             logoutCallback: logoutCallback,
+            userEmail: _userEmail,
+            userId: _userId,
           );
         } else
           return loadingScreen();

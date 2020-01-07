@@ -13,10 +13,6 @@ class _SplashDisplayState extends State<SplashDisplay> {
     return SplashScreen(
       seconds: 5,
       navigateAfterSeconds: '/start',
-      title: Text(
-        "HairTime",
-        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-      ),
       image: Image.asset('assets/logo.png'),
       backgroundColor: Colors.white,
       styleTextUnderTheLoader:
